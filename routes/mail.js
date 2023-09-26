@@ -3,5 +3,5 @@ import {sendEmail} from "../controllers/mailRouter.js"
 
 const router = Router();
 
-router.post("",sendEmail)
+router.post("/",sendEmail)
 export default router;
