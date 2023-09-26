@@ -3,9 +3,9 @@ import nodemailer from "nodemailer"
 
 export const sendEmail =  async (req = request,res=response) =>{
 
-const {name,email,message} = req.body
+const {name,email,message,phone} = req.body
 
-if (!name || !email || !message) return res.status(400).status({msg: "campos vacios"})
+if (!name || !email || !message ||!phone) return res.status(400).status({msg: "campos vacios"})
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -22,7 +22,8 @@ const template = `
 	<h1>Has recibido un nuevo mensaje</h1>
 	<hr />
 	<p>De: ${name}</p>
-	<p>Email: ${email}</p>
+	<p>Email del interesado: ${email}</p>
+  <p>Teléfono del interesado: ${phone}</p>
 	<p>Mensaje: ${message}</p>
 	<hr />
     `
