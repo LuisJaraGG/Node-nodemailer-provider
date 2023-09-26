@@ -5,7 +5,7 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port =5000;
+        this.port =4000;
         this.mailPath = '/api/mail';
         // Middlewares
         this.middlewares();
