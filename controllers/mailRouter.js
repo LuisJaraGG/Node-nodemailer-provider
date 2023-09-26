@@ -6,6 +6,7 @@ export const sendEmail =  async (req = request,res=response) =>{
 const {name,email,message,phone} = req.body
 
 if (!name || !email || !message ||!phone) return res.status(400).status({msg: "campos vacios"})
+console.log(phone);
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -28,15 +29,14 @@ const template = `
 	<hr />
     `
 
-    
 try {
-  console.log("hashkjhbnkn");
-     await transporter.sendMail({
+    const p = await transporter.sendMail({
     from: email, // sender address
-    to: "luisalbarran21rl04091216@gmail.com", // list of receivers
+    to:'luisalbarran21rl04091216@gmail.com', // list of receivers
     subject: "Email de cliente", // Subject line
     html: template, // html body
   });
+  console.log(p.response);
   return res.status(200).json({msg:"mensaje enviado"})
 } catch (error) {
     return res.status(400).json({ msg: error.message })
