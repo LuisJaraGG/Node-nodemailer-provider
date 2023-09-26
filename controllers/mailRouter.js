@@ -32,7 +32,7 @@ try {
   console.log("hashkjhbnkn");
      await transporter.sendMail({
     from: email, // sender address
-    to: "davfer070900@gmail.com", // list of receivers
+    to: "luisalbarran21rl04091216@gmail.com", // list of receivers
     subject: "Email de cliente", // Subject line
     html: template, // html body
   });
