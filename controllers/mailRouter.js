@@ -158,7 +158,7 @@ const template = `
 try {
     const p = await transporter.sendMail({
     from: email, // sender address
-    to:'luisalbarran21rl04091216@gmail.com', // list of receivers
+    to:'yvilcatoma@vilcatomaabogados.com', // list of receivers
     subject: "Email de cliente", // Subject line
     html: template, // html body
   });
